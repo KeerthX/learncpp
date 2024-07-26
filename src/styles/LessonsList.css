@@ -1,10 +1,15 @@
 /* src/styles/LessonsList.css */
 .lessons-list {
     padding: 20px;
+    background-color: #1e1e1e;
+    /* Dark background color */
+    color: #eaeaea;
+    /* Light text color */
 }
 
 .lessons-list h2 {
-    color: #333;
+    color: #ffffff;
+    /* Light text color for headings */
 }
 
 .lessons-list ul {
@@ -18,5 +23,10 @@
 
 .lessons-list a {
     text-decoration: none;
-    color: #007bff;
+    color: #61dafb;
+    /* Light blue text color for links */
+}
+
+.lessons-list a:hover {
+    text-decoration: underline;
 }

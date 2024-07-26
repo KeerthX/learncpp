@@ -1,14 +1,21 @@
 /* src/styles/Lesson.css */
 .lesson {
     padding: 20px;
+    background-color: #1e1e1e;
+    /* Dark background color */
+    color: #eaeaea;
+    /* Light text color */
 }
 
 .lesson h1,
 .lesson h2,
 .lesson h3 {
-    color: #333;
+    color: #ffffff;
+    /* Light text color for headings */
 }
 
 .lesson p {
     line-height: 1.6;
+    color: #eaeaea;
+    /* Light text color for paragraphs */
 }

@@ -12,36 +12,36 @@ const Lesson = () => {
     const [content, setContent] = useState('');
     const [displayTopic, setDisplayTopic] = useState('');
     const [displayLesson, setDisplayLesson] = useState('');
+    const [error, setError] = useState('');
 
     useEffect(() => {
         const loadContent = async () => {
-            // Find the topic and lesson from the JSON data
-            const topicData = data.topics.find(t => t.folderName === topicName);
-            if (topicData) {
-                const lessonData = topicData.lessons.find(l => l.fileName.split('.')[0] === lessonName);
-                if (lessonData) {
-                    setDisplayTopic(topicData.displayName);
-                    setDisplayLesson(lessonData.displayName);
-
-                    // Load the markdown file content
-                    try {
-                        const response = await fetch(`/content/${topicName}/${lessonData.fileName}`);
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
-                        const text = await response.text();
-                        setContent(text);
-                    } catch (err) {
-                        console.error(`Error loading the markdown file: ${err.message}`);
-                        setContent(`Error loading lesson content: ${err.message}`);
-                    }
-                } else {
-                    console.error(`Lesson not found: ${lessonName}`);
-                    setContent(`Lesson not found: ${lessonName}`);
+            try {
+                // Find the topic and lesson from the JSON data
+                const topicData = data.topics.find(t => t.folderName === topicName);
+                if (!topicData) {
+                    throw new Error(`Topic not found: ${topicName}`);
                 }
-            } else {
-                console.error(`Topic not found: ${topicName}`);
-                setContent(`Topic not found: ${topicName}`);
+
+                const lessonData = topicData.lessons.find(l => l.fileName.split('.')[0] === lessonName);
+                if (!lessonData) {
+                    throw new Error(`Lesson not found: ${lessonName}`);
+                }
+
+                setDisplayTopic(topicData.displayName);
+                setDisplayLesson(lessonData.displayName);
+
+                // Load the markdown file content
+                const response = await fetch(`/content/${topicName}/${lessonData.fileName}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const text = await response.text();
+                setContent(text);
+            } catch (err) {
+                console.error(err.message);
+                setError(err.message);
+                setContent('');
             }
         };
 
@@ -50,10 +50,16 @@ const Lesson = () => {
 
     return (
         <div className="lesson">
-            <h1>{displayTopic}</h1>
-            <h2>{displayLesson}</h2>
+            <h1>{displayTopic || 'Loading...'}</h1>
+            <h2>{displayLesson || 'Loading...'}</h2>
             <div className="markdown-content">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+                {error ? (
+                    <p className="error-message">Error: {error}</p>
+                ) : (
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {content || 'Loading content...'}
+                    </ReactMarkdown>
+                )}
             </div>
         </div>
     );
