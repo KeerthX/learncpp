@@ -1,0 +1,32 @@
+{
+    "topics": [
+        {
+            "folderName": "topic1",
+            "displayName": "Topic 1",
+            "lessons": [
+                {
+                    "fileName": "lesson1.md",
+                    "displayName": "Lesson 1"
+                },
+                {
+                    "fileName": "lesson2.md",
+                    "displayName": "Lesson 2"
+                }
+            ]
+        },
+        {
+            "folderName": "topic2",
+            "displayName": "Topic 2",
+            "lessons": [
+                {
+                    "fileName": "lesson1.md",
+                    "displayName": "Lesson 1"
+                },
+                {
+                    "fileName": "lesson2.md",
+                    "displayName": "Lesson 2"
+                }
+            ]
+        }
+    ]
+}

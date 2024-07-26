@@ -1,0 +1,22 @@
+/* src/styles/LessonsList.css */
+.lessons-list {
+    padding: 20px;
+}
+
+.lessons-list h2 {
+    color: #333;
+}
+
+.lessons-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lessons-list li {
+    margin: 5px 0;
+}
+
+.lessons-list a {
+    text-decoration: none;
+    color: #007bff;
+}

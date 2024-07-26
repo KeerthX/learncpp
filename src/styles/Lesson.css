@@ -1,0 +1,14 @@
+/* src/styles/Lesson.css */
+.lesson {
+    padding: 20px;
+}
+
+.lesson h1,
+.lesson h2,
+.lesson h3 {
+    color: #333;
+}
+
+.lesson p {
+    line-height: 1.6;
+}
