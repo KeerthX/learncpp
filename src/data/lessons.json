@@ -2,15 +2,19 @@
     "topics": [
         {
             "folderName": "topic1",
-            "displayName": "Topic 1",
+            "displayName": "1. Basics",
             "lessons": [
                 {
                     "fileName": "lesson1.md",
-                    "displayName": "Lesson 1"
+                    "displayName": "1.1 Data Types"
                 },
                 {
                     "fileName": "lesson2.md",
-                    "displayName": "Lesson 2"
+                    "displayName": "1.2 Primitive Data Types and Type Modifiers"
+                },
+                {
+                    "fileName": "lesson3.md",
+                    "displayName": "1.3 Structure of a C++ Program"
                 }
             ]
         },
