@@ -6,7 +6,12 @@ body {
   color: #eaeaea;
   /* Light text color */
   margin: 0;
-  padding: 20px;
+  padding: 10px;
+}
+
+section {
+  height: 100%;
+  width: 100%;
 }
 
 code {
