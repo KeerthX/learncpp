@@ -15,6 +15,12 @@
 
 .navbar li {
     margin: 0;
+    scale: 1;
+    transition: all 0.3s ease;
+}
+
+.navbar li:hover {
+    transform: scale(1.1);
 }
 
 .navbar a {
@@ -24,5 +30,5 @@
 }
 
 .navbar a:hover {
-    text-decoration: underline;
+    color: #f1f1f1;
 }
