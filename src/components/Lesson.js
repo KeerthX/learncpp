@@ -1,6 +1,6 @@
 // src/components/Lesson.js
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import '../styles/Lesson.css';
@@ -10,29 +10,61 @@ import data from '../data/lessons.json';
 const Lesson = () => {
     const { topicName, lessonName } = useParams();
     const [content, setContent] = useState('');
-    const [displayTopic, setDisplayTopic] = useState('');
-    const [displayLesson, setDisplayLesson] = useState('');
     const [error, setError] = useState('');
+    const [nextLesson, setNextLesson] = useState(null);
+    const [prevLesson, setPrevLesson] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const loadContent = async () => {
             try {
-                // Find the topic and lesson from the JSON data
-                const topicData = data.topics.find(t => t.folderName === topicName);
-                if (!topicData) {
+                const topicIndex = data.topics.findIndex(t => t.folderName === topicName);
+                if (topicIndex === -1) {
                     throw new Error(`Topic not found: ${topicName}`);
                 }
 
-                const lessonData = topicData.lessons.find(l => l.fileName.split('.')[0] === lessonName);
-                if (!lessonData) {
+                const topicData = data.topics[topicIndex];
+                const lessonIndex = topicData.lessons.findIndex(l => l.fileName.split('.')[0] === lessonName);
+                if (lessonIndex === -1) {
                     throw new Error(`Lesson not found: ${lessonName}`);
                 }
 
-                setDisplayTopic(topicData.displayName);
-                setDisplayLesson(lessonData.displayName);
+                const currentLessonData = topicData.lessons[lessonIndex];
+
+                // Set previous lesson
+                if (lessonIndex > 0) {
+                    setPrevLesson({
+                        topicName: topicName,
+                        lessonName: topicData.lessons[lessonIndex - 1].fileName.split('.')[0]
+                    });
+                } else if (topicIndex > 0) {
+                    const prevTopic = data.topics[topicIndex - 1];
+                    setPrevLesson({
+                        topicName: prevTopic.folderName,
+                        lessonName: prevTopic.lessons[prevTopic.lessons.length - 1].fileName.split('.')[0]
+                    });
+                } else {
+                    setPrevLesson(null);
+                }
+
+                // Set next lesson
+                if (lessonIndex < topicData.lessons.length - 1) {
+                    setNextLesson({
+                        topicName: topicName,
+                        lessonName: topicData.lessons[lessonIndex + 1].fileName.split('.')[0]
+                    });
+                } else if (topicIndex < data.topics.length - 1) {
+                    const nextTopic = data.topics[topicIndex + 1];
+                    setNextLesson({
+                        topicName: nextTopic.folderName,
+                        lessonName: nextTopic.lessons[0].fileName.split('.')[0]
+                    });
+                } else {
+                    setNextLesson(null);
+                }
 
                 // Load the markdown file content
-                const response = await fetch(`/content/${topicName}/${lessonData.fileName}`);
+                const response = await fetch(`/content/${topicName}/${currentLessonData.fileName}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -46,12 +78,17 @@ const Lesson = () => {
         };
 
         loadContent();
+        window.scrollTo(0, 0);
     }, [topicName, lessonName]);
+
+    const handleNavigation = (lesson) => {
+        if (lesson) {
+            navigate(`/lesson/${lesson.topicName}/${lesson.lessonName}`);
+        }
+    };
 
     return (
         <div className="lesson">
-            <h1>{displayTopic || 'Loading...'}</h1>
-            <h2>{displayLesson || 'Loading...'}</h2>
             <div className="markdown-content">
                 {error ? (
                     <p className="error-message">Error: {error}</p>
@@ -60,6 +97,22 @@ const Lesson = () => {
                         {content || 'Loading content...'}
                     </ReactMarkdown>
                 )}
+            </div>
+            <div className="lesson-navigation">
+                <button
+                    onClick={() => handleNavigation(prevLesson)}
+                    disabled={!prevLesson}
+                    className="nav-button prev-button"
+                >
+                    ← Previous
+                </button>
+                <button
+                    onClick={() => handleNavigation(nextLesson)}
+                    disabled={!nextLesson}
+                    className="nav-button next-button"
+                >
+                    Next →
+                </button>
             </div>
         </div>
     );

@@ -1,6 +1,3 @@
-Here's the complete markdown content made informative and well-structured:
-
-
 # Primitive Data Types and Type Modifiers
 
 ## Primitive Data Types
