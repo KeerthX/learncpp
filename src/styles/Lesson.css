@@ -13,6 +13,17 @@
     padding: 20px;
 }
 
+.lesson-navigation-up {
+    position: relative;
+    /* bottom: 15px; */
+    margin: 20px 0px 0px 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
 .lesson-navigation {
     position: relative;
     bottom: 15px;
@@ -23,6 +34,7 @@
     justify-content: space-between;
     padding: 0 20px;
 }
+
 
 .footersec {
     position: absolute;

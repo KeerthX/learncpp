@@ -109,14 +109,14 @@ const Lesson = () => {
                     disabled={!prevLesson}
                     className="nav-button prev-button"
                 >
-                    ← Previous: {prevLesson ? prevLesson.displayName : ''}
+                    ← Previous:
                 </button>
                 <button
                     onClick={() => handleNavigation(nextLesson)}
                     disabled={!nextLesson}
                     className="nav-button next-button"
                 >
-                    Next: {nextLesson ? nextLesson.displayName : ''} →
+                    Next:→
                 </button>
             </div>
             <div className="footersec">
