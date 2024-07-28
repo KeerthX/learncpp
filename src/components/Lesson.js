@@ -1,4 +1,3 @@
-// src/components/Lesson.js
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
@@ -31,17 +30,19 @@ const Lesson = () => {
 
                 const currentLessonData = topicData.lessons[lessonIndex];
 
-                // Set previous lesson
                 if (lessonIndex > 0) {
                     setPrevLesson({
                         topicName: topicName,
-                        lessonName: topicData.lessons[lessonIndex - 1].fileName.split('.')[0]
+                        lessonName: topicData.lessons[lessonIndex - 1].fileName.split('.')[0],
+                        displayName: topicData.lessons[lessonIndex - 1].displayName
                     });
                 } else if (topicIndex > 0) {
                     const prevTopic = data.topics[topicIndex - 1];
+                    const prevLesson = prevTopic.lessons[prevTopic.lessons.length - 1];
                     setPrevLesson({
                         topicName: prevTopic.folderName,
-                        lessonName: prevTopic.lessons[prevTopic.lessons.length - 1].fileName.split('.')[0]
+                        lessonName: prevLesson.fileName.split('.')[0],
+                        displayName: prevLesson.displayName
                     });
                 } else {
                     setPrevLesson(null);
@@ -51,13 +52,16 @@ const Lesson = () => {
                 if (lessonIndex < topicData.lessons.length - 1) {
                     setNextLesson({
                         topicName: topicName,
-                        lessonName: topicData.lessons[lessonIndex + 1].fileName.split('.')[0]
+                        lessonName: topicData.lessons[lessonIndex + 1].fileName.split('.')[0],
+                        displayName: topicData.lessons[lessonIndex + 1].displayName
                     });
                 } else if (topicIndex < data.topics.length - 1) {
                     const nextTopic = data.topics[topicIndex + 1];
+                    const nextLesson = nextTopic.lessons[0];
                     setNextLesson({
                         topicName: nextTopic.folderName,
-                        lessonName: nextTopic.lessons[0].fileName.split('.')[0]
+                        lessonName: nextLesson.fileName.split('.')[0],
+                        displayName: nextLesson.displayName
                     });
                 } else {
                     setNextLesson(null);
@@ -104,14 +108,14 @@ const Lesson = () => {
                     disabled={!prevLesson}
                     className="nav-button prev-button"
                 >
-                    ← Previous
+                    ← Previous: {prevLesson ? prevLesson.displayName : ''}
                 </button>
                 <button
                     onClick={() => handleNavigation(nextLesson)}
                     disabled={!nextLesson}
                     className="nav-button next-button"
                 >
-                    Next →
+                    Next: {nextLesson ? nextLesson.displayName : ''} →
                 </button>
             </div>
         </div>
