@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm';
 import '../styles/Lesson.css';
 import '../styles/markdown.css';
 import data from '../data/lessons.json';
+import Footer from '../components/Footer';
 
 const Lesson = () => {
     const { topicName, lessonName } = useParams();
@@ -117,6 +118,9 @@ const Lesson = () => {
                 >
                     Next: {nextLesson ? nextLesson.displayName : ''} →
                 </button>
+            </div>
+            <div className="footersec">
+                <Footer />
             </div>
         </div>
     );
