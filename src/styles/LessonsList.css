@@ -1,32 +1,52 @@
-/* src/styles/LessonsList.css */
 .lessons-list {
     padding: 20px;
     background-color: #1e1e1e;
-    /* Dark background color */
     color: #eaeaea;
-    /* Light text color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lessons-list h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 2rem;
 }
 
 .lessons-list h2 {
     color: #ffffff;
-    /* Light text color for headings */
+    margin: 10px 0;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
 }
+
+
 
 .lessons-list ul {
     list-style-type: none;
     padding: 0;
 }
 
-.lessons-list li {
-    margin: 5px 0;
+.anm {
+    margin: 10px 30px;
+    transition: transform 0.3s ease;
+
+}
+
+.anm:hover {
+    transform: translateX(10px);
 }
 
 .lessons-list a {
     text-decoration: none;
-    color: #61dafb;
-    /* Light blue text color for links */
+    transition: color 0.3s ease;
+    color: #ffffff;
 }
 
 .lessons-list a:hover {
-    text-decoration: underline;
+    color: #ffffff;
+}
+
+a:visited,
+:hover {
+    color: #ffffff;
 }

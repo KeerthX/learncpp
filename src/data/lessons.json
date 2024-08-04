@@ -1,34 +1,354 @@
 {
     "topics": [
         {
-            "folderName": "topic1",
-            "displayName": "1. Basics",
+            "folderName": "chapter1",
+            "displayName": "1. Starting with C++",
             "lessons": [
                 {
                     "fileName": "lesson1.md",
-                    "displayName": "1.1 Data Types"
+                    "displayName": "1.1 What is C++?"
                 },
                 {
                     "fileName": "lesson2.md",
-                    "displayName": "1.2 Primitive Data Types and Type Modifiers"
+                    "displayName": "1.2 Installing Visual C++"
                 },
                 {
                     "fileName": "lesson3.md",
-                    "displayName": "1.3 Structure of a C++ Program"
+                    "displayName": "1.3 Setting up"
+                },
+                {
+                    "fileName": "lesson4.md",
+                    "displayName": "1.4 Creating and running a simple program"
+                },
+                {
+                    "fileName": "lesson5.md",
+                    "displayName": "1.5 Understanding C++ syntax and structure"
+                },
+                {
+                    "fileName": "lesson6.md",
+                    "displayName": "1.6 Using input and output streams"
+                },
+                {
+                    "fileName": "lesson7.md",
+                    "displayName": "1.7 Summary"
                 }
             ]
         },
         {
-            "folderName": "topic2",
-            "displayName": "Topic 2",
+            "folderName": "chapter2",
+            "displayName": "2. Understanding Basic Language Features",
             "lessons": [
                 {
-                    "fileName": "lesson1.md",
-                    "displayName": "Lesson 1"
+                    "fileName": "lesson8.md",
+                    "displayName": "2.1 Writing C++"
                 },
                 {
-                    "fileName": "lesson2.md",
-                    "displayName": "Lesson 2"
+                    "fileName": "lesson9.md",
+                    "displayName": "2.2 Using white space"
+                },
+                {
+                    "fileName": "lesson10.md",
+                    "displayName": "2.3 Formatting code"
+                },
+                {
+                    "fileName": "lesson11.md",
+                    "displayName": "2.4 Writing statements"
+                },
+                {
+                    "fileName": "lesson12.md",
+                    "displayName": "2.5 Working with expressions"
+                },
+                {
+                    "fileName": "lesson13.md",
+                    "displayName": "2.6 Using types and variables"
+                },
+                {
+                    "fileName": "lesson14.md",
+                    "displayName": "2.7 Using constants and literals"
+                },
+                {
+                    "fileName": "lesson15.md",
+                    "displayName": "2.8 Declaring pointers"
+                },
+                {
+                    "fileName": "lesson16.md",
+                    "displayName": "2.9 Using namespaces"
+                },
+                {
+                    "fileName": "lesson17.md",
+                    "displayName": "2.10 Summary"
+                }
+            ]
+        },
+        {
+            "folderName": "chapter3",
+            "displayName": "3. Exploring C++ Types",
+            "lessons": [
+                {
+                    "fileName": "lesson18.md",
+                    "displayName": "3.1 Exploring built-in types"
+                },
+                {
+                    "fileName": "lesson19.md",
+                    "displayName": "3.2 Integers"
+                },
+                {
+                    "fileName": "lesson20.md",
+                    "displayName": "3.3 Floating point types"
+                },
+                {
+                    "fileName": "lesson21.md",
+                    "displayName": "3.4 Characters and strings"
+                },
+                {
+                    "fileName": "lesson22.md",
+                    "displayName": "3.5 Boolean"
+                },
+                {
+                    "fileName": "lesson23.md",
+                    "displayName": "3.6 void"
+                },
+                {
+                    "fileName": "lesson24.md",
+                    "displayName": "3.7 Initializers"
+                },
+                {
+                    "fileName": "lesson25.md",
+                    "displayName": "3.8 Type conversions"
+                },
+                {
+                    "fileName": "lesson26.md",
+                    "displayName": "3.9 Summary"
+                }
+            ]
+        },
+        {
+            "folderName": "chapter4",
+            "displayName": "4. Working with Memory, Arrays, and Pointers",
+            "lessons": [
+                {
+                    "fileName": "lesson27.md",
+                    "displayName": "4.1 Using memory in C++"
+                },
+                {
+                    "fileName": "lesson28.md",
+                    "displayName": "4.2 Using pointers"
+                },
+                {
+                    "fileName": "lesson29.md",
+                    "displayName": "4.3 Using arrays"
+                },
+                {
+                    "fileName": "lesson30.md",
+                    "displayName": "4.4 Function parameters"
+                },
+                {
+                    "fileName": "lesson31.md",
+                    "displayName": "4.5 Multidimensional arrays"
+                },
+                {
+                    "fileName": "lesson32.md",
+                    "displayName": "4.6 Summary"
+                }
+            ]
+        },
+        {
+            "folderName": "chapter5",
+            "displayName": "5. Using Functions",
+            "lessons": [
+                {
+                    "fileName": "lesson33.md",
+                    "displayName": "5.1 Defining C++ functions"
+                },
+                {
+                    "fileName": "lesson34.md",
+                    "displayName": "5.2 Declaring and defining functions"
+                },
+                {
+                    "fileName": "lesson35.md",
+                    "displayName": "5.3 Function parameters"
+                },
+                {
+                    "fileName": "lesson36.md",
+                    "displayName": "5.4 Using default parameters"
+                },
+                {
+                    "fileName": "lesson37.md",
+                    "displayName": "5.5 Overloading functions"
+                },
+                {
+                    "fileName": "lesson38.md",
+                    "displayName": "5.6 Passing by value and passing by reference"
+                },
+                {
+                    "fileName": "lesson39.md",
+                    "displayName": "5.7 Using function pointers"
+                },
+                {
+                    "fileName": "lesson40.md",
+                    "displayName": "5.8 Lambda expressions"
+                },
+                {
+                    "fileName": "lesson41.md",
+                    "displayName": "5.9 Summary"
+                }
+            ]
+        },
+        {
+            "folderName": "chapter6",
+            "displayName": "6. Classes and Object-Oriented Programming",
+            "lessons": [
+                {
+                    "fileName": "lesson42.md",
+                    "displayName": "6.1 Writing classes"
+                },
+                {
+                    "fileName": "lesson43.md",
+                    "displayName": "6.2 Defining class behavior"
+                },
+                {
+                    "fileName": "lesson44.md",
+                    "displayName": "6.3 Using the this pointer"
+                },
+                {
+                    "fileName": "lesson45.md",
+                    "displayName": "6.4 Defining class state"
+                },
+                {
+                    "fileName": "lesson46.md",
+                    "displayName": "6.5 Creating objects"
+                },
+                {
+                    "fileName": "lesson47.md",
+                    "displayName": "6.6 Defining constructors"
+                },
+                {
+                    "fileName": "lesson48.md",
+                    "displayName": "6.7 Destructors"
+                },
+                {
+                    "fileName": "lesson49.md",
+                    "displayName": "6.8 Inheritance and composition"
+                },
+                {
+                    "fileName": "lesson50.md",
+                    "displayName": "6.9 Polymorphism"
+                },
+                {
+                    "fileName": "lesson51.md",
+                    "displayName": "6.10 Summary"
+                }
+            ]
+        },
+        {
+            "folderName": "chapter7",
+            "displayName": "7. Using the Standard Library Containers",
+            "lessons": [
+                {
+                    "fileName": "lesson52.md",
+                    "displayName": "7.1 Working with pairs and tuples"
+                },
+                {
+                    "fileName": "lesson53.md",
+                    "displayName": "7.2 Sequence containers (List, Vector, Deque)"
+                },
+                {
+                    "fileName": "lesson54.md",
+                    "displayName": "7.3 Associative containers (Maps, Sets)"
+                },
+                {
+                    "fileName": "lesson55.md",
+                    "displayName": "7.4 Iterators"
+                },
+                {
+                    "fileName": "lesson56.md",
+                    "displayName": "7.5 Algorithms"
+                },
+                {
+                    "fileName": "lesson57.md",
+                    "displayName": "7.6 Summary"
+                }
+            ]
+        },
+        {
+            "folderName": "chapter8",
+            "displayName": "8. Using Strings",
+            "lessons": [
+                {
+                    "fileName": "lesson58.md",
+                    "displayName": "8.1 Using the string class as a container"
+                },
+                {
+                    "fileName": "lesson59.md",
+                    "displayName": "8.2 Getting information about a string"
+                },
+                {
+                    "fileName": "lesson60.md",
+                    "displayName": "8.3 Altering strings"
+                },
+                {
+                    "fileName": "lesson61.md",
+                    "displayName": "8.4 Searching strings"
+                },
+                {
+                    "fileName": "lesson62.md",
+                    "displayName": "8.5 Summary"
+                }
+            ]
+        },
+        {
+            "folderName": "chapter9",
+            "displayName": "9. Diagnostics and Debugging",
+            "lessons": [
+                {
+                    "fileName": "lesson63.md",
+                    "displayName": "9.1 Using assertions"
+                },
+                {
+                    "fileName": "lesson64.md",
+                    "displayName": "9.2 Debugging C++ programs"
+                },
+                {
+                    "fileName": "lesson65.md",
+                    "displayName": "9.3 Setting breakpoints"
+                },
+                {
+                    "fileName": "lesson66.md",
+                    "displayName": "9.4 Using the debugger"
+                },
+                {
+                    "fileName": "lesson67.md",
+                    "displayName": "9.5 Using logging"
+                },
+                {
+                    "fileName": "lesson68.md",
+                    "displayName": "9.6 Summary"
+                }
+            ]
+        },
+        {
+            "folderName": "chapter10",
+            "displayName": "10. Writing Multi-Threaded Programs",
+            "lessons": [
+                {
+                    "fileName": "lesson69.md",
+                    "displayName": "10.1 Introduction to threading"
+                },
+                {
+                    "fileName": "lesson70.md",
+                    "displayName": "10.2 Using the thread class"
+                },
+                {
+                    "fileName": "lesson71.md",
+                    "displayName": "10.3 Thread joining and detaching"
+                },
+                {
+                    "fileName": "lesson72.md",
+                    "displayName": "10.4 Using thread locks (Mutexes, Condition variables)"
+                },
+                {
+                    "fileName": "lesson73.md",
+                    "displayName": "10.5 Summary"
                 }
             ]
         }

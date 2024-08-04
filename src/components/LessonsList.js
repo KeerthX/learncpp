@@ -1,4 +1,3 @@
-// src/components/LessonsList.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import data from '../data/lessons.json';
@@ -16,7 +15,7 @@ const LessonsList = () => {
                         <h2>{topic.displayName}</h2>
                         <ul>
                             {topic.lessons.map((lesson, lessonIndex) => (
-                                <li key={lessonIndex}>
+                                <li className='anm' key={lessonIndex}>
                                     <Link to={`/lesson/${topic.folderName}/${lesson.fileName.split('.')[0]}`}>
                                         {lesson.displayName}
                                     </Link>
